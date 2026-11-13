@@ -1,0 +1,36 @@
+2D Ising model - Monte Carlo study
+algorithm=metropolis, sizes=[8, 16, 32, 64], burn=2000, measure=20000, seed=2024
+Onsager T_c = 2.26919
+
+=== VALIDATION: 4x4 lattice, Metropolis vs exact enumeration ===
+    T |           e (MC)  e (exact) |           C (MC)  C (exact) |           m (MC)  m (exact)
+1.500 |  -1.9509+-0.0004    -1.9506 |   0.1977+-0.0021     0.2003 |   0.9863+-0.0001     0.9862
+2.269 |  -1.5668+-0.0017    -1.5658 |   0.7805+-0.0031     0.7832 |   0.8445+-0.0008     0.8439
+3.000 |  -1.0178+-0.0017    -1.0171 |   0.6036+-0.0013     0.6031 |   0.6010+-0.0009     0.6013
+5.000 |  -0.4563+-0.0008    -0.4561 |   0.1195+-0.0004     0.1195 |   0.3431+-0.0005     0.3428
+VALIDATION PASSED (all within ~4 sigma)
+
+Making equilibration and snapshot figures ...
+
+=== Temperature scan ===
+  L=   8 done in    2.3 s
+  L=  16 done in    8.6 s
+  L=  32 done in   33.2 s
+  L=  64 done in  135.1 s
+
+Making plots ...
+
+
+FINAL RESULTS
+
+Onsager exact T_c = 2.2692
+  Binder crossing (L=8, L=16):  T = 2.2807
+  Binder crossing (L=16, L=32):  T = 2.2914
+  Binder crossing (L=32, L=64):  T = 2.2539
+  Binder estimate:     T_c = 2.2753 +- 0.0193   (deviation from Onsager: +0.0061)
+Critical slowing down: tau ~ L^z with z = 2.20 (literature: ~2.17 for Metropolis)
+
+Minimum effective sample size over all runs: 11
+Total run time: 185.9 s
+Outputs written to: C:\Rajiv Data Folder\Data\Computational Phy\ising_output/
+  summary.txt, fig1..fig6
